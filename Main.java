@@ -9,7 +9,11 @@ public class Main {
         //1000, 2000, -1500, 3000, -500 -> 4500
         //1, -2, 3, 4, -1, 2, 1, -5, 4 -> 9
         //1, -1, 2, -2, 3, -3, 4, -4 -> 4
-        int[] input_array = {1, -1, 2, -2, 3, -3, 4, -4};
+        //3, -1, -1, 5, 2, -4, 6, 1, -2 -> 11
+        //100, -200, 300, -400, 500 -> 500
+        //2, 1, -1, 2, 3, -1, 5, -3, 1 -> 11
+        
+        int[] input_array = {2, 1, -1, 2, 3, -1, 5, -3, 1};
         kadane = new Kadane(input_array);
         bruteForce = new BruteForce(input_array);
         divideNConquer = new DivideNConquer(input_array);
