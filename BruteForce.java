@@ -10,7 +10,8 @@ public class BruteForce {
         max_sum = current_max_sum;
         for(int i = 0; i < array.length; i++){
             for(int j = i; j < array.length; j++){
-                current_max_sum =+ array[j];
+                current_max_sum += array[j];
+
                 if(current_max_sum > max_sum){
                     max_sum = current_max_sum;
                 }
