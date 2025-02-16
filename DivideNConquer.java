@@ -5,7 +5,7 @@ public class DivideNConquer {
     }
 
     public int getMaximumSum(int left, int right){
-        int current_max_sum = 0;
+        int middle = (left + right)/2;
         int max_sum = 0;  
 
         if(left >= right){   //base case
@@ -13,21 +13,38 @@ public class DivideNConquer {
             return max_sum;
         }
 
-        max_sum = array[left];
+        int leftSide = getLeftMaximum(left, middle); //the "left"
+        int rightSide = getRightMaximum(middle + 1, right); //the "right"
+        max_sum = Math.max(Math.max(leftSide + rightSide, leftSide), rightSide); //the "center"
 
+        int left_sum = getMaximumSum(left, middle);
+        int right_sum = getMaximumSum(middle + 1, right);
+        
+        max_sum = Math.max(Math.max(max_sum, left_sum), right_sum);
+        return max_sum;
+    }
+
+    public int getRightMaximum(int left, int right){ // starts from the right of the left substring
+        int max_sum = 0;
+        int current_max_sum = 0;
         for(int i = left; i <= right; i++){
             current_max_sum += array[i];
             if(current_max_sum > max_sum){
                 max_sum = current_max_sum;
             }
         }
+        return max_sum;
+    }
 
-        int middle = (left + right)/2;
-        int left_sum = getMaximumSum(left, middle);
-        int right_sum = getMaximumSum(middle + 1, right);
-        System.out.println(max_sum);
-        
-        max_sum = Math.max(Math.max(max_sum, left_sum), right_sum);
+    public int getLeftMaximum(int left, int right){ //starts from the left of the right substring
+        int max_sum = 0;
+        int current_max_sum = 0;
+        for(int i = right; i >= left; i--){
+            current_max_sum += array[i];
+            if(current_max_sum > max_sum){
+                max_sum = current_max_sum;
+            }
+        }
         return max_sum;
     }
 
