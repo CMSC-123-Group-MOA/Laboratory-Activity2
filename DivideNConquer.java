@@ -25,8 +25,8 @@ public class DivideNConquer {
     }
 
     public int getRightMaximum(int left, int right){ // starts from the right of the left substring
-        int max_sum = 0;
-        int current_max_sum = 0;
+        int current_max_sum = array[left];
+        int max_sum = current_max_sum;
         for(int i = left; i <= right; i++){
             current_max_sum += array[i];
             if(current_max_sum > max_sum){
@@ -37,8 +37,8 @@ public class DivideNConquer {
     }
 
     public int getLeftMaximum(int left, int right){ //starts from the left of the right substring
-        int max_sum = 0;
-        int current_max_sum = 0;
+        int current_max_sum = array[right];
+        int max_sum = current_max_sum;
         for(int i = right; i >= left; i--){
             current_max_sum += array[i];
             if(current_max_sum > max_sum){

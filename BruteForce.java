@@ -6,7 +6,7 @@ public class BruteForce {
     }
 
     public int getMaximumSum(){
-        int current_max_sum = 0;
+        int current_max_sum = array[0];
         max_sum = current_max_sum;
         for(int i = 0; i < array.length; i++){
             for(int j = i; j < array.length; j++){

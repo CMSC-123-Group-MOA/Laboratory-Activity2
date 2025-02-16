@@ -4,7 +4,7 @@ public class Main {
         Kadane kadane;
         DivideNConquer divideNConquer;
         
-        int[] input_array = {2, 3, -8, 7, -1, 2, 3};
+        int[] input_array = {-1, -2, -3, -4};
         kadane = new Kadane(input_array);
         bruteForce = new BruteForce(input_array);
         divideNConquer = new DivideNConquer(input_array);
