@@ -4,7 +4,12 @@ public class Main {
         Kadane kadane;
         DivideNConquer divideNConquer;
         
-        int[] input_array = {-1, -2, -3, -4};
+        //test cases:
+        //2, 3, -8, 7, -1, 2, 3 -> 11
+        //1000, 2000, -1500, 3000, -500 -> 4500
+        //1, -2, 3, 4, -1, 2, 1, -5, 4 -> 9
+        //1, -1, 2, -2, 3, -3, 4, -4 -> 4
+        int[] input_array = {1, -1, 2, -2, 3, -3, 4, -4};
         kadane = new Kadane(input_array);
         bruteForce = new BruteForce(input_array);
         divideNConquer = new DivideNConquer(input_array);

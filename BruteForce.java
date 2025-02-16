@@ -11,12 +11,9 @@ public class BruteForce {
         for(int i = 0; i < array.length; i++){
             for(int j = i; j < array.length; j++){
                 current_max_sum += array[j];
-
-                if(current_max_sum > max_sum){
-                    max_sum = current_max_sum;
-                }
+                max_sum = Math.max(current_max_sum, max_sum);
             }
-            current_max_sum = 0;
+            current_max_sum = array[i];
         }
         return max_sum;
     }
